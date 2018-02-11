@@ -154,6 +154,12 @@ const CGFloat btnTitleFont   = 16.0;
         UITapGestureRecognizer *tap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
         [_backgroundView addGestureRecognizer:tap];
         tap.enabled = _backDismiss ==YES ?YES :NO;
+        
+//        UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+//        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+//        effectView.frame = CGRectMake(0, 0, 200, 500);
+//        [_backgroundView addSubview:effectView];
+
     }
     return _backgroundView;
 }
@@ -212,7 +218,7 @@ const CGFloat btnTitleFont   = 16.0;
     UIColor *textColor =self.btnArr.count? KRGB(28, 28, 28):[UIColor whiteColor];
     messageLabel.textColor = textColor;
     messageLabel.font = [UIFont systemFontOfSize:messageFont];
-    messageLabel.textAlignment = NSTextAlignmentLeft;
+    messageLabel.textAlignment = self.btnArr.count? NSTextAlignmentLeft :NSTextAlignmentCenter;
     
     [self.contentView addSubview:messageLabel];
     

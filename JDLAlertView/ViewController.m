@@ -18,11 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor =[UIColor purpleColor];
+    
+    UIImageView * logoImageView =[[UIImageView alloc] initWithFrame:self.view.bounds];
+    logoImageView.image =[UIImage imageNamed:@"timg"];
+    [self.view addSubview:logoImageView];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    [JDLAlertView showAlertViewWithTitle:nil message:@"啦咔咔啦考虑考虑考虑考虑考虑考虑考虑考虑啦咔咔啦考虑考虑考" buttonTitles:@[@"哈哈",@"我问得",@"多大的"] backgroundStyle:JDLBackgroundStyleBlack backDismiss:YES clickBlock:^(NSInteger index, NSString *title) {
+    [JDLAlertView showAlertViewWithTitle:@"提示" message:@"啦咔咔啦考虑考虑考虑考虑考虑考虑考虑考虑啦咔咔啦考虑考虑考" buttonTitles:@[@"哈哈",@"我问得",@"多大的"] backgroundStyle:JDLBackgroundStyleBlack backDismiss:YES clickBlock:^(NSInteger index, NSString *title) {
         switch (index) {
             case 0:
                 NSLog(@"第一个");
